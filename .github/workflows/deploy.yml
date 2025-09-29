@@ -1,8 +1,5 @@
 name: Terraform Deploy to Azure
 
-permissions:
-  id-token: write
-  contents: read
 
 on:
   workflow_dispatch:  
