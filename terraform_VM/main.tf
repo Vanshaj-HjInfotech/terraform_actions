@@ -132,7 +132,7 @@ resource "azurerm_virtual_machine_extension" "ext" {
 
   settings = <<SETTINGS
     {
-      "fileUris": ["https://raw.githubusercontent.com/Vanshaj-HjInfotech/Sample-website-todolist/refs/heads/main/scripts/setup.sh"],
+      "fileUris": [https://raw.githubusercontent.com/Vanshaj-HjInfotech/terraform_infra_script/refs/heads/main/scripts/setup.sh],
       "commandToExecute": "bash setup.sh"
     }
 SETTINGS
