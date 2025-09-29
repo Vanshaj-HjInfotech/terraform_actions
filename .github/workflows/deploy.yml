@@ -23,6 +23,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Azure CLI script
+        uses: azure/cli@v2
+        with:
+          azcliversion: latest
+          inlineScript: |
+            az group create --name rg-test-ci-003 --location centralindia
+            az storage account create --resource-group rg-test-ci-003 --name strblobdataci001 --location centralindia --sku Standard_LRS 
+            az storage container create --name tfstate --account-name strblobdataci001 
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
